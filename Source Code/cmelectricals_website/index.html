@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CM Electric</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.jpeg" rel="icon">
+  <link href="assets/img/logo.jpeg" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!--Booking-->
+  <!-- Font Icon -->
+  <link rel="stylesheet" href="book/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+  <!-- Main css -->
+    <link rel="stylesheet" href="book/css/style.css">  
+    
+      <!--LogIn-->
+  <!-- Font Icon -->
+  <link rel="stylesheet" href="login/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+  <!-- Main css -->
+    <link rel="stylesheet" href="login/css/style.css">  
+
+  <!-- =======================================================
+  * Template Name: CM-Electric
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/CM-Electric-bootstrap-Booking-Services-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+
+<!-- log in scrpits -->
+<!--===============================================================================================-->	
+<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+<!-- <link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.jsdelivr.net/npm/pnotify@5.1.2/dist/PNotify.css"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.jsdelivr.net/npm/pnotify@5.1.2/dist/PNotifyBrightTheme.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/pnotify@5.1.2/dist/iife/PNotify.js"></script> -->
+<link rel="stylesheet" href="./assets/css/alertify.min.css">
+<script src="./assets/js/alertify.min.js"></script>
+
+
+</head>
+
+<body>
+ 
+  <div class="main" id="bookformid" style="position: absolute; top:50%; left: 50%; z-index: 1; display: none; transform : translate(-50%,-50%);  height: 400px;">
+
+    <section class="signup">
+        <!-- <img src="images/signup-bg.jpg" alt=""> -->
+        <div class="container">
+            <div class="signup-content">
+             
+                <form method="POST" id="bookform" class="signup-form">
+                  <span><ion-icon name="close-outline" style="top:0; right: 10px; width: 30px; height: 30px; position: absolute;" onclick="closeBookForm()"></ion-icon></span> 
+                    <h2 class="form-title">Register</h2>
+                    <div class="form-group">
+                        <input type="text" class="form-input" name="name" id="name" placeholder="Your Name" required/>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-input" name="surname" id="surname" placeholder="Your Surname" required/>
+                  </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" name="email" id="email" placeholder="Your Email" required/>
+                    </div>
+                    <div class="form-group">
+                      <input type="number" class="form-input" name="phone" id="phone" placeholder="Your phone number" required/>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-input" name="password" id="password" placeholder="Password"/>
+                    <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Repeat your password"/>
+                </div> 
+                  <!-- <div class="form-group"> 
+                    <input type="text" class="form-input" name="Address" id="address" placeholder="Your address" required/>
+                </div>
+                <div class="form-group">
+                  <input type="datetime-local" class="form-input" name="date" id="date" required/>
+              </div>
+
+                    <div class="form-group" >
+                    <select class="form-input" id="service">
+                      <option value="" disabled="disabled" selected="selected" >Select a service</option>
+                      <option value="COC">COC</option>
+                      <option value="Borehole motors">Borehole motors</option>
+                      <option value="Car lifting">Car lifting</option>
+                      <option value="Generator installation">Generator installation</option>
+                      <option value="Solar systems installation">Solar systems installation</option>
+                      <option value="House wiring"> House wiring</option>
+                      <option value="Aircorn installation">Aircorn installation</option>
+                      <option value="Electric fence">Electric fence</option>
+                  </select>
+
+                </div>-->
+                    <!-- <div class="form-group">
+                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                        <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                    </div> -->
+                    <div class="form-group">
+
+
+                        <input type="submit" name="submit" id="submit" class="form-submit" value="Register" onclick="registerForm()"  />
+
+          
+                        <!-- <input type="submit" name="submit" id="submit" class="form-submit" value="Book" autocomplete="off" onclick="submitBookForm()"/> -->
+
+
+                    </div>
+                </form>
+                <!-- <p class="loginhere">
+                    Have already an account ? <a href="#" class="loginhere-link">Login here</a>
+                </p> -->
+            </div>
+        </div>
+    </section>
+    </div>
+
+     <!--Track Appointment-->
+    <div class="main" id="trackformid" style="position: absolute; top:50%; left: 50%; z-index: 1; display: none; transform : translate(-50%,-50%);  height: 400px;">
+
+      <section class="signup">
+          <!-- <img src="images/signup-bg.jpg" alt=""> -->
+          <div class="container">
+              <div class="signup-content">
+               
+                  <form method="POST" id="viewappointment" class="signup-form" onsubmit="return false">
+                    <span><ion-icon name="close-outline" style="top:0; right: 10px; width: 30px; height: 30px; position: absolute;" onclick="closetrackForm()"></ion-icon></span> 
+                      <h2 class="form-title">Register</h2>
+                   
+                      <!-- <div class="form-group">
+                          <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"/>
+                      </div> -->
+                      <div class="form-group">
+                        <input type="text" class="form-input" name="code" id="referencecode" placeholder="Your Reference Code" required/>
+                    </div>
+
+                      
+                      <div class="form-group">
+                          <input type="submit" name="submit" id="submit" class="form-submit" value="Track" onclick="submitTrackForm()"/>
+                      </div>
+                  </form>
+                  <!-- <p class="loginhere">
+                      Have already an account ? <a href="#" class="loginhere-link">Login here</a>
+                  </p> -->
+              </div>
+          </div>
+      </section>
+      </div>
+
+<!-- Log In -->
+      <div class="main" id="loginformid" style="position: absolute; top:50%; left: 50%; z-index: 1; display: none; transform : translate(-50%,-50%);  height: 400px;">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                 
+                    <form method="POST" id="loginformid" class="signup-form">
+                      <span><ion-icon name="close-outline" style="top:0; right: 10px; width: 30px; height: 30px; position: absolute;" onclick="closeLoginForm()"></ion-icon></span> 
+                        <h2 class="form-title">Log In</h2>
+                        <div class="form-group">
+
+                        
+
+                            <div class="d-flex flex-row align-items-center mb-4">
+                              <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                              <div class="form-outline flex-fill mb-0">
+                                <input type="email" class="form-input" id="logemail" placeholder="Your Email" required/>
+                                <!-- <label class="form-label" for="form3Example1c">Your Name</label> -->
+                              </div>
+                            </div>
+          
+                            <div class="d-flex flex-row align-items-center mb-4">
+                              <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                              <div class="form-outline flex-fill mb-0">
+                                <!-- <input type="password" id="form3Example4c" class="form-control" /> -->
+                                <input type="password" class="form-input"  id="logpassword" placeholder="Your Password" required/>
+                                <!-- <label class="form-label" for="form3Example4c">Password</label> -->
+                              </div>
+                            </div>
+        
+                          <input type="submit" name="submit" id="submit" class="form-submit" value="Log In" onclick="submitLoginForm()" />
+                    <div class="form-group">
+                    
+
+                        <!-- <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div> -->
+                        <div class="form-group">
+    
+    
+                            <!-- <input type="submit" name="submit" id="submit" class="form-submit" value="Log In" onclick="validateUser()" /> -->
+
+
+    
+              
+                            <!-- <input type="submit" name="submit" id="submit" class="form-submit" value="Book" autocomplete="off" onclick="submitBookForm()"/> -->
+
+    
+                        </div>
+
+                        <div class="form-check d-flex justify-content-center mb-5">
+                          <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                          <!-- <label class="form-check-label" for="form2Example3"> -->
+                            <!-- I agree all statements in <a href="#!">Terms of service</a> -->
+                            <p>Don't have an account? <a href="javascript:OpenBookForm()">Sign up here</a>.</p>
+                          </label>
+                        </div>
+
+                    </form>
+
+                    <script src="main.js"></script>
+                    <!-- Registration Pop-up Form -->
+
+                    <!-- <p class="loginhere">
+                        Have already an account ? <a href="#" class="loginhere-link">Login here</a>
+                    </p> -->
+                </div>
+            </div>
+        </section>
+
+
+
+        </div>
+
+     
+
+
+       
+           <!--Appointment Status-->
+    <div class="main" id="trackstatusformid" style="position: absolute; top:50%; left: 50%; z-index: 1; display: none; transform : translate(-50%,-50%);  height: 400px;">
+
+      <section class="signup">
+          <!-- <img src="images/signup-bg.jpg" alt=""> -->
+          <div class="grid-container" >
+              <div class="signup-content" style="border:#ce1212 solid 1px;">
+               
+                  <form method="POST" id="signup-form" class="signup-form" style="height: 400px; ">
+                    <span><ion-icon name="close-outline" style="top: 80px; right: 10px; width: 30px; height: 30px; position: absolute;" onclick="closeStatusForm()"></ion-icon></span>
+                    <h2 class="form-title">APPOINTMENT STATUS</h2> 
+                    <div class="form-group">
+                      <div class="statusinfo">
+                        <div class="updatedate">
+                          <p>12 Apr 2023</p>
+                        </div>
+                        <div class="updatemessage">
+                          <p>Your appointment was booked with us for 28 April 2023.</p>                       
+                        </div>
+                        <div class="updatebreak">
+                          <hr>
+                        </div>
+                        <div class="updatedate">
+                          <p>13 Apr 2023</p>
+                        </div>
+                        <div class="updatemessage">
+                          <p>Technician Mr Ditau will be of your assistance. 
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <p></p>
+                    <hr>
+                    <p>Service Type: Aircon installation</p> -->
+                  </div>
+                  </form>
+              </div>
+          </div>
+      </section>
+      </div>
+
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+  <a href="index.html">  <img src="assets/img/logo.jpeg" alt=""  style = "width : 80px ; height : 80px;" > </a> 
+
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+      </a>
+      
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#why-us">Services</a></li>
+
+<!----
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+          <li><a href="#contact">Contact</a></li>
+        
+
+        </ul>
+      </nav><!-- .navbar -->
+
+      <ul>
+        <button  class="btn-book-a-table" style="border:none; " type="submit" onclick="OpenBookForm()">Register</button>
+        <!-- <button  class="btn-book-a-table" style="border:none; " type="submit" onclick="TrackForm()">Track Appointment</button> -->
+        <button  class="btn-book-a-table" style="border:none; " type="submit" onclick="OpenLoginForm()">Log In</button>
+      </ul>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+      
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center section-bg" style = "background-image: url(assets/img/solar.jpeg); " data-aos="fade-up" data-aos-delay="150" >
+
+    <div class="container">
+      <div class="row justify-content-between gy-5">
+        <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
+          <h2 data-aos="fade-up">Get the best<br>and Satisfying Services</h2>
+          <p data-aos="fade-up" data-aos-delay="100"></p>
+          <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+            <!-- <button  class="btn-book-a-table" style="border:none; " type="submit" onclick="OpenBookForm()">Book Appointment</button> -->
+            <!-- <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
+          </div>
+        </div>
+        <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
+        <!---- <img src="assets/img/hero-img.png" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="300">-->
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>About Us</h2>
+          <p>Learn More <span>About Us</span></p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-7 position-relative about-img" style="background-image: url(assets/img/electrician1.jpeg) ; background-size: 100% 100%; data-aos:fade-up ; data-aos-delay:150"> 
+           <!-- <div class="call-us position-absolute" >
+              <h4>Book Appointment</h4>
+              <p>+1 5589 55488 55</p>
+            </div>-->
+          </div>
+          <div class="col-lg-5 d-flex align-items-top" data-aos="fade-up" data-aos-delay="300">
+            <div class="content ps-0 ps-lg-5">
+              <p class="fst-italic">
+                The CM Electricals is an electrical company which was founded in 2008.
+              </p>
+              <!-- <ul>
+                <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li><i class="bi bi-check2-all"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              </ul> -->
+              <p style="font-size: 14px;">
+                The company was founded by Mr Mashigo who was first a manager for a certain company that offered electrical services before realising that there was a demand for electricians who offered various services in his area.
+                When it comes to electrical services, our company stands out from the competition. We are a team of dedicated professionals with years of experience in the industry, and we take great pride in our work. Our aim is to provide the highest quality electrical services to our customers, and to do so in a way that is safe, efficient, and affordable.
+             </p>
+              <p style="font-size: 14px;">
+                At our company, we understand the importance of electrical systems in both residential and commercial settings. From lighting and heating to security and productivity, our electrical systems are an essential part of our daily lives. That's why we take our work so seriously. Our team of electricians is highly trained and experienced, and we use only the best materials and equipment to ensure that our work is of the highest quality.
+              </p>
+              <p style="font-size: 14px;">
+                But we don't just focus on the technical aspects of our work. We also place a high value on customer service. We understand that electrical issues can be stressful and disruptive, which is why we work hard to make the process as smooth and stress-free as possible. From the initial consultation to the final inspection, we keep our customers informed every step of the way, and we always strive to exceed their expectations. 
+
+              </p>
+              <!--<div class="position-relative mt-4">
+                <img src="assets/img/about-2.jpg" class="img-fluid" alt="">
+                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+              </div>-->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+   
+    <!-- ======= Stats Counter Section ======= -->
+    <section id="stats-counter" class="stats-counter">
+      <div class="container" data-aos="zoom-out">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Clients</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Appointments</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Hours Of Support</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Workers</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+    </section>  <!-- End Stats Counter Section --> 
+
+
+     <!-- ======= Why Us Section ======= -->
+     <section id="why-us" class="why-us section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Our Services</h2>
+          <p>Check Our <span>Services</span></p>
+        </div>
+
+        <div class="row gy-4">
+
+
+          <!-- <div class="col-lg-8 d-flex align-items-center"> -->
+            <!-- <div class="row gy-4"> -->
+
+              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <!-- <i class="bi bi-clipboard-data"></i> -->
+                  <i class="bi bi-inboxes"></i>
+                  <h4>Air Conditioner</h4>
+                  <p>Do you need an Aircon intallation to your home or office building? Let CM Electric install it for you correctly!</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <!-- <i class="bi bi-gem"></i> -->
+                  <i class="bi bi-inboxes"></i>
+                  <h4>Solar System</h4>
+                  <p>Get your residential, commercial or industrial Solar System Installation, repairs and replacements done efficiently and fast!</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+
+              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-inboxes"></i>
+                  <h4>Car lifts</h4>
+                  <p>Are you looking for a highly skilled, professional, knowledgeable, safety-conscious and efficient Car lifiting Connection technician? Worry less with CM Electric you are sorted</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+
+              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-inboxes"></i>
+                  <h4>Boreholes</h4>
+                  <p>Let us connect your Borehole and get your Borehole functioning correctly without any hassles! </p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-inboxes"></i>
+                  <h4>Electric Fence</h4>
+                  <p>Do you want to upgrade your security?  Let us install your electric fence with some of our best technicians</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-inboxes"></i>
+                  <h4>Generator</h4>
+                  <p>Do you need an Generator intallation/Connection to your home, company office, super market and etc?CM Electric got exactly what you need.</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+            <!-- </div> -->
+          <!-- </div> -->
+
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>Need Help? <span>Contact Us</span></p>
+        </div>
+
+        <div class="mb-3">
+          <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14409.765332432598!2d30.992942239174493!3d-25.456934716246014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee849e238d675a7%3A0x6c5993547a8cba1d!2sKamagugu%2C%20Mbombela%2C%201200!5e0!3m2!1sen!2sza!4v1683454967979!5m2!1sen!2sza" frameborder="0" allowfullscreen></iframe>
+        </div><!-- End Google Maps -->
+
+        <div class="row gy-4">
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-map flex-shrink-0"></i>
+              <div>
+                <h3>Our Address</h3>
+                <p>744 Kamagugu, Mbombela, 1200</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item d-flex align-items-center">
+              <i class="icon bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>info@cmelectric.com</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+27 76 457 4995</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item  d-flex align-items-center">
+              <i class="icon bi bi-share flex-shrink-0"></i>
+              <div>
+                <h3>Opening Hours</h3>
+                <div><strong>Mon-Sat:</strong> 08AM - 5PM;
+                  <strong>Sunday:</strong> Closed
+                </div>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+        </div>
+
+        <form  method="POST" id="enquireForm" role="form" class="php-email-form p-3 p-md-4">
+          <div class="row" style="display: block; ">
+
+            <div class="section-header">
+              <h2>ENQUIRY</h2>
+            </div>
+
+            <div class="col-xl-6 form-group">
+              <input type="text" name="name" class="form-control" id="q_name" placeholder="Your Name" required>
+            </div>
+            <div class="col-xl-6 form-group">
+              <input type="email" class="form-control" name="email" id="q_email" placeholder="Your Email" required>
+            </div>
+          
+          <div class="form-group">
+            <input type="text" class="form-control" name="subject" id="q_subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="message" id="q_message" rows="5" placeholder="Message" required></textarea>
+          </div>
+          <!-- <div class="my-3"> 
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+          </div> -->
+          <div class="text-center"><button type="submit" onclick="submitQueryForm()">Send Query</button></div>
+          
+        </form><!--End Contact Form -->
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-geo-alt icon"></i>
+          <div>
+            <h4>Address</h4>
+            <p>
+              744 Kamagugu <br>
+              Mbombela, 1200 <br>
+            </p>
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-telephone icon"></i>
+          <div>
+            <h4>Reservations</h4>
+            <p>
+              <strong>Phone:</strong> +27 76 457 4995<br>
+              <strong>Email:</strong> info@cmelectric.com<br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
+          <i class="bi bi-clock icon"></i>
+          <div>
+            <h4>Opening Hours</h4>
+            <p>
+              <strong>Mon-Sat: 11AM</strong> - 23PM<br>
+              Sunday: Closed
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Follow Us</h4>
+          <div class="social-links d-flex">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>cmelectric</span></strong>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/ -->
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Booking -->
+   <!-- JS -->
+    <script src="book/vendor/jquery/jquery.min.js"></script>
+   <script src="book/js/main.js"></script> 
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="api/apiconnection.js"></script>
+   
+
+   <!--<script> src="control.js"</script>-->
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+<!-- scripts for log in -->
+
+<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+   
+
+  <!-- end of log in scrpits -->
+
+</body>
+
+</html>

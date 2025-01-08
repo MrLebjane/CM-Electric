@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CM Electric</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.jpeg" rel="icon">
+  <link href="assets/img/logo.jpeg" rel="apple-touch-icon">
+      
+  <link rel="stylesheet" href="./assets/css/alertify.min.css">
+  <script src="./assets/js/alertify.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/payment.css" rel="stylesheet">
+
+  <!--Booking-->
+  <!-- Font Icon -->
+  <link rel="stylesheet" href="book/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+  <!-- Main css -->
+    <link rel="stylesheet" href="book/css/style.css">  
+    
+      <!--LogIn-->
+  <!-- Font Icon -->
+  <link rel="stylesheet" href="login/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+  <!-- Main css -->
+    <link rel="stylesheet" href="login/css/style.css">  
+
+  <!-- =======================================================
+  * Template Name: CM-Electric
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/CM-Electric-bootstrap-Booking-Services-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+
+<!-- log in scrpits -->
+<!--===============================================================================================-->	
+<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+
+</head>
+
+<body>
+
+    <script>
+     
+     function generatepayment(){
+        document.getElementById("reference").innerHTML+="  "+sessionStorage.getItem('BookID');
+        document.getElementById("m_payment_id").value=sessionStorage.getItem('BookID');
+        // document.getElementById("return_url").value="http://cmelectric.co.za/Home.html/payment-confirmation?payment_id="+sessionStorage.getItem('BookID')+"&status=success";
+
+        document.getElementById("amount").innerHTML+=sessionStorage.getItem('grandtotal');
+        document.getElementById("amount_fee").value=sessionStorage.getItem('grandtotal');
+        document.getElementById("item-name").value=sessionStorage.getItem('servicetype');
+        // document.getElementById("paymentform").innerHTML+="<input type='hidden' name='amount' value="+sessionStorage.getItem('grandtotal')+">"
+     }
+     window.onload=generatepayment
+    </script>   
+      
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+  <a href="index.html">  <img src="assets/img/logo.jpeg" alt=""  style = "width : 80px ; height : 80px;" > </a> 
+
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+      </a>
+      
+      <nav id="navbar" class="navbar">
+        <ul> 
+          <li><a href="javascript:OpenHomeForm()">Home</a></li>
+          <li><a href="javascript:OpenBookingForm()">Booking</a></li>
+          <li><a href="javascript:OpenMyBookingsForm()">My Bookings</a></li>
+        
+
+        </ul>
+      </nav><!-- .navbar -->
+
+      <ul>
+        <button  class="btn-book-a-table" style="border:none; " type="submit" onclick="redirectToHomePage()">Log Out</button>
+      </ul>
+
+      <script>
+        
+        </script>
+        
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+ 
+
+  <main id="main" id = "" style="background: #eee;" style="align-items:center">
+          <br><br><br><br>
+     
+          
+      <div class="payment" style="background: white; max-width: 600px; margin: 0 auto; padding: 25px; border: 1px solid #ddd; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+            <div class="form-container" style="align-items: center; justify-content: center;">
+            <div>
+                 <h6 class="form-title">Payment Details</h6>
+                 <h6>Merchant :  CM Electric</h6>
+                  <h6 id="reference">Reference :</h6>
+                  <h6 id="amount">Amount : R</h6>
+            </div>
+            <br><br>
+            <h6 >Payment Method</h6>
+            <hr style="border: 1px solid black; width: 100%;" />
+            <img src="assets/img/payfast.png" width="80" height="80" style="align-items: left; justify-content: start;" />
+            <form action="https://sandbox.payfast.co.za/eng/process" id="paymentform" method="POST" class="checkout-form">
+              <!-- Required Parameters -->
+              <input type="hidden" name="merchant_id" value="	10031171">
+              <input type="hidden" name="merchant_key" value="xwgxywgarq513">
+              <input type="hidden" name="return_url" id="return_url" value="http://cmelectric.co.za/Paymentsuccess.html">
+              <input type="hidden" name="cancel_url" value="http://cmelectric.co.za/Home.html">
+              <input type="hidden" name="notify_url" value="http://cmelectric.co.za/Home.html/payfast-notification">
+              <input type="hidden" name="name_first" value="John">
+              <input type="hidden" name="name_last" value="Doe">
+              <input type="hidden" name="email_address" value="john.doe@example.com">
+              <input type="hidden" name="m_payment_id" id="m_payment_id">
+              <input type="hidden" name="amount" id="amount_fee">
+              <input type="hidden" name="item_name" id="item-name">
+              <input type="hidden" name="item_description" value="Description of the test product">
+              <input type="hidden" name="payment_method" value="cc">
+              <!-- <input type="hidden" name="notify_url" value="https://example.com/payfast-notification"> -->
+
+              <!-- Optional Parameters -->
+              <input type="hidden" name="custom_str1" value="">
+              <input type="hidden" name="custom_str2" value="">
+              <input type="hidden" name="custom_str3" value="">
+              <input type="hidden" name="custom_str4" value="">
+              <input type="hidden" name="custom_str5" value="">
+                <input style="background-color:  #ec2727;" type="submit" value="Complete Payment">
+            </form>
+        </div>
+    </div>
+
+    
+  </main><!-- End #main -->
+
+  
+   
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Booking -->
+   <!-- JS -->
+    <script src="book/vendor/jquery/jquery.min.js"></script>
+   <script src="book/js/main.js"></script> 
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="api/apiconnection.js"></script> 
+   
+
+   <!--<script> src="control.js"</script>-->
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+<!-- scripts for log in -->
+
+<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+  <!-- end of log in scrpits -->
+
+
+</body>
+
+</html>

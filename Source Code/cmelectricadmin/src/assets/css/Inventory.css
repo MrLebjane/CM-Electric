@@ -1,0 +1,66 @@
+
+  .Inventory {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 83vw;
+    height: 100%;
+    background-color: #f1f1f1;
+    padding: 80px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding-top: 10vw;
+    display: flex;
+     flex-direction: column;
+    gap: 20px;
+    }
+    .Inventory--screen-minimized {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    input[type="text"] {
+      /* Add styles for the search bar container */
+      display: flex;
+      justify-content: flex-start;
+      min-width:200px;
+      min-height: 40px;
+      align-items:baseline;
+      border-radius: 10px;
+      background-color: #ffffff;
+    }
+    .heading{
+        position:relative;
+        text-align: left;
+        word-wrap:inherit;
+        top: -50px;;
+        left:10px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+    .headlogo{
+        height:25px
+      }
+    .AllInventory{
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+        border-radius: 15px;
+    }
+    .Inventorylist{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .Stock{
+        min-width: 200px;
+        min-height: 100px;
+        max-width: 200px;
+        max-height: 100px;
+        background:#e74c3c;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
+        flex: 1;
+        margin: 10px;
+        text-align:center;
+        font-size: 30px;
+      }

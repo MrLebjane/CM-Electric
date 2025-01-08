@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CM Electric</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.jpeg" rel="icon">
+  <link href="assets/img/logo.jpeg" rel="apple-touch-icon">
+    
+<link rel="stylesheet" href="./assets/css/alertify.min.css">
+<script src="./assets/js/alertify.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/quotation.css" rel="stylesheet">
+
+  <!--Booking-->
+  <!-- Font Icon -->
+  <link rel="stylesheet" href="book/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+  <!-- Main css -->
+    <link rel="stylesheet" href="book/css/style.css">  
+    
+      <!--LogIn-->
+  <!-- Font Icon -->
+  <link rel="stylesheet" href="login/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+  <!-- Main css -->
+    <link rel="stylesheet" href="login/css/style.css">  
+
+  <!-- =======================================================
+  * Template Name: CM-Electric
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/CM-Electric-bootstrap-Booking-Services-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+
+<!-- log in scrpits -->
+<!--===============================================================================================-->	
+<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+
+</head>
+
+<body>
+
+    <script>
+     
+     function generatequotation(){
+      const queryParams = new URLSearchParams(window.location.search);
+     const id = queryParams.get('id');
+     sessionStorage.setItem('BookID',id);
+     var servicefee =0;
+     axios.get('http://localhost:8080/getuserbooking/'+id, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
+    })
+      .then(response => {
+        document.getElementById("custname").innerHTML+=" "+response.data.user_Name
+        document.getElementById("address").innerHTML+=" "+response.data.address
+        document.getElementById("email").innerHTML+=" "+response.data.user_Email
+        // alert(response.data.user_Name)
+        servicefee = response.data.price * response.data.time;
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
+      var innerhtml="";
+      var subtotal=0;
+      axios.get('http://localhost:8080/getquotation/'+id, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
+    })
+      .then(response => {
+        response.data.qp.forEach(element => {
+        subtotal +=  element.quantity* element.price;
+        innerhtml+="<tr>";
+        innerhtml +="<td class='service'>"+element.product_name+"</td>";
+        innerhtml +="<td class='desc'>"+element.product_brand+"</td>";
+        innerhtml +="<td class='unit'>R"+element.price+"</td>";
+        innerhtml += "<td class='qty'>"+element.quantity+"</td>";
+        innerhtml +="<td class='total'>R"+ element.quantity* element.price+ "</td>";
+        innerhtml +="</tr>";
+        })
+        innerhtml +="<tr>";
+        innerhtml +="<td colspan='4'>SUBTOTAL</td>";
+        innerhtml +="<td class='total' id='subtotal'>R"+(Number(subtotal)).toFixed(2)+"</td>";
+        innerhtml +="</tr>";
+        innerhtml +="<tr>";
+        innerhtml +="<td colspan='4'>SERVICE(Labour) FEE</td>";
+        innerhtml +="<td class='total' id='servicefee'>R"+ response.data.service_Fee+"</td>";
+        innerhtml +="</tr>";
+        innerhtml +="<tr>";
+        innerhtml +="<td colspan='4' class='grand total'>GRAND TOTAL</td>";
+        innerhtml +="<td class='grand total' id='grandtotal'>R"+(Number(response.data.grandtotal)).toFixed(2)+"</td>";
+        innerhtml +=" </tr>";
+        document.getElementById("invprod").innerHTML+=innerhtml;
+        sessionStorage.setItem('grandtotal',(Number(response.data.grandtotal)).toFixed(2));
+        
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
+     }
+     window.onload=generatequotation
+    </script>   
+      
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+  <a href="index.html">  <img src="assets/img/logo.jpeg" alt=""  style = "width : 80px ; height : 80px;" > </a> 
+
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+      </a>
+      
+      <nav id="navbar" class="navbar">
+        <ul> 
+          <li><a href="javascript:OpenHomeForm()">Home</a></li>
+          <li><a href="javascript:OpenBookingForm()">Booking</a></li>
+          <li><a href="javascript:OpenMyBookingsForm()">My Bookings</a></li>
+        
+
+        </ul>
+      </nav><!-- .navbar -->
+
+      <ul>
+        <button  class="btn-book-a-table" style="border:none; " type="submit" onclick="redirectToHomePage()">Log Out</button>
+      </ul>
+
+      <script>
+        
+        </script>
+        
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+ 
+
+  <main id="main" id = "quotation" style="background: #eee;" style="align-items:center">
+          <br><br><br><br>
+     
+          <form id="form1" runat="server" class ="quotation"  style="max-width: 800px; align-content: center; margin: 0 auto; padding: 25px; border: 1px solid #ddd; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+          <header class="clearfix">
+            
+        <div id="logo">
+          <img src="assets/img/logo.jpeg"></img>
+        </div>
+        <div class="homeheading">
+          <div>
+            <h1>Invoice</h1>
+
+          </div>  
+       </div>
+        <div id="company" class="clearfix">
+          <div>CMELECTRIC</div>
+          <div>744 Kamagugu,<br />Mbombela, 1200, <br />South Africa</div>
+          <div>+27 76 457 4995</div>
+          <div><a href="#">info@cmelectric.com</a></div>
+        </div>
+        <div id="project">
+          <div id="custname" runat="server">CUSTOMER: </div>
+          <div id="address" runat="server">ADDRESS: </div>
+          <div id="email">EMAIL: <a href="#" runat="server"></a></div>
+          <div id="tdate" runat="server">DATE:</div>
+        </div>
+      </header>
+      <main>
+        <table>
+          <thead>
+            <tr>
+              <th class="service">Name</th>
+              <th class="desc">DESCRIPTION</th>
+              <th>PRICE</th>
+              <th>QTY</th>
+              <th>TOTAL</th>
+            </tr>
+          </thead>
+          <tbody id="invprod">
+             
+            
+          </tbody>
+        </table>
+        
+      </main>
+      </form>
+    
+  </main><!-- End #main -->
+
+  
+   
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Booking -->
+   <!-- JS -->
+    <script src="book/vendor/jquery/jquery.min.js"></script>
+   <script src="book/js/main.js"></script> 
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="api/apiconnection.js"></script> 
+   
+
+   <!--<script> src="control.js"</script>-->
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+<!-- scripts for log in -->
+
+<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+  <!-- end of log in scrpits -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+.Overview {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 83vw;
+    height: 100%;
+    background-color: #f1f1f1;
+    padding: 80px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding-top: 10vw;
+    display: flex;
+     flex-direction: column;
+    gap: 20px;
+  }
+  .Overview--screen-minimized {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .heading{
+    position:relative;
+    text-align: left;
+    word-wrap:inherit;
+    top: -50px;;
+    left:10px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+ .graph{
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    border-radius: 30px;
+  }
+  .nav-link-item {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    color: #333;
+    text-decoration: none;
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 180px;
+    height:60px;
+  }
+  
+  .nav-link-item:hover {
+    background-color: #eaeaea;
+  }
+  

@@ -1,0 +1,118 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #ddd;
+  height: 35px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80vw;
+  z-index: 99;
+  overflow-x: hidden;
+  overflow-y: hidden; /* Hide the vertical scrollbar */
+  
+}
+
+.navbar__left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__toggle {
+  background-color: transparent;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar--screen-minimized {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navbar__logo {
+  font-size: 24px;
+  font-weight: bold;
+  white-space: nowrap; /* Prevent logo text from wrapping to the next line */
+  overflow: hidden; /* Hide any overflowing logo text */
+  text-overflow: ellipsis; /* Add ellipsis (...) to indicate hidden text */
+}
+
+.navbar__right {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  white-space: nowrap; /* Prevent right-side contents from wrapping */
+}
+
+.navbar__right li {
+  margin-left: 20px;
+}
+
+.navbar__right li a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar__right li a:hover {
+  color: #000000;
+}
+
+.navbar__userIcon {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.navbar__username {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px;
+    width: 100vw;
+    overflow: hidden; /* Hide any overflowing contents */
+  }
+
+  .navbar__left {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    white-space: nowrap; /* Prevent right-side contents from wrapping */
+  }
+
+  .navbar__toggle {
+    font-size: 22px;
+  }
+
+  .navbar__logo {
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap; /* Prevent logo text from wrapping to the next line */
+    overflow: hidden; /* Hide any overflowing logo text */
+    text-overflow: ellipsis; /* Add ellipsis (...) to indicate hidden text */
+  }
+  
+  .navbar__right {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    white-space: nowrap; /* Prevent right-side contents from wrapping */
+  }
+}

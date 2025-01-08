@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CM Electric</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.jpeg" rel="icon">
+  <link href="assets/img/logo.jpeg" rel="apple-touch-icon">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!--Booking-->
+  <!-- Font Icon -->
+  <link rel="stylesheet" href="book/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+  <!-- Main css -->
+    <link rel="stylesheet" href="book/css/style.css">  
+    
+      <!--LogIn-->
+  <!-- Font Icon -->
+  <link rel="stylesheet" href="login/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+  <!-- Main css -->
+    <link rel="stylesheet" href="login/css/style.css">  
+        
+    <link rel="stylesheet" href="./assets/css/alertify.min.css">
+    <script src="./assets/js/alertify.min.js"></script>
+
+  <!-- =======================================================
+  * Template Name: CM-Electric
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/CM-Electric-bootstrap-Booking-Services-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+
+<!-- log in scrpits -->
+<!--===============================================================================================-->	
+<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+
+</head>
+
+<body>
+  <script>
+    function getAppointments(){
+      event.preventDefault();
+      var table="";
+      // const queryParams = new URLSearchParams(window.location.search);
+      // const id = queryParams.get('id');
+      const id =sessionStorage.getItem('isLoggedIn');
+      axios.get('http://localhost:8080/getuserbookings/'+id, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
+    })
+      .then(response => {
+        response.data.forEach(element => {
+          table += "<tr>";
+          //  table += "<td>{user.user_Pass word}</td>";
+            table += " <td>"+element.book_ID+"</td>";
+            table += " <td>"+element.appointmentDate+"</td>";
+            table += " <td>"+element.service+"</td>";
+            table += " <td>"+element.address+"</td>";
+            var complete=element.complete!='0' ? 'Complete' : 'Incomplete'
+            table += " <td>"+complete+"</td>";
+            table += "<td> <button className='View Information' onclick=' viewbooking("+element.book_ID+")'>View</button></td>";
+          //         <!-- <td>
+          //         <Link to={{ pathname: '/customer/information', search: `?id=${user.user_Password}` }}><button className='View Information'>View</button></Link>
+          //         </td> -->
+          table += "</tr>";
+          
+        });
+        document.getElementById("tableid").innerHTML+=table;
+        console.log(table)
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
+      // return table;
+      
+    }
+    window.onload = getAppointments 
+  </script>
+  <div class="main" id="bookformid" style="position: absolute; top:50%; left: 50%; z-index: 1; display: none; transform : translate(-50%,-50%);  height: 400px;">
+
+    <section class="signup">
+        <!-- <img src="images/signup-bg.jpg" alt=""> -->
+        <div class="container">
+            <div class="signup-content">
+             
+                <form method="POST" id="bookform" class="signup-form">
+                  <span><ion-icon name="close-outline" style="top:0; right: 10px; width: 30px; height: 30px; position: absolute;" onclick="closeBookForm()"></ion-icon></span> 
+                    <h2 class="form-title">BOOK APPOINTMENT</h2>
+                    <div class="form-group">
+                        <input type="text" class="form-input" name="name" id="name" placeholder="Your Name" required/>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-input" name="surname" id="surname" placeholder="Your Surname" required/>
+                  </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" name="email" id="email" placeholder="Your Email" required/>
+                    </div>
+                    <div class="form-group">
+                      <input type="number" class="form-input" name="phone" id="phone" placeholder="Your phone number" required/>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-input" name="Address" id="address" placeholder="Your address" required/>
+                </div>
+                <div class="form-group">
+                  <input type="datetime-local" class="form-input" name="date" id="date" required/>
+              </div>
+                    <!-- <div class="form-group">
+                        <input type="text" class="form-input" name="password" id="password" placeholder="Password"/>
+                        <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Repeat your password"/>
+                    </div> -->
+                    <div class="form-group" >
+                    <select class="form-input" id="service">
+                      <option value="" disabled="disabled" selected="selected" >Select a service</option>
+                      <option value="COC">COC</option>
+                      <option value="Borehole motors">Borehole motors</option>
+                      <option value="Car lifting">Car lifting</option>
+                      <option value="Generator installation">Generator installation</option>
+                      <option value="Solar systems installation">Solar systems installation</option>
+                      <option value="House wiring"> House wiring</option>
+                      <option value="Aircorn installation">Aircorn installation</option>
+                      <option value="Electric fence">Electric fence</option>
+                  </select>
+
+                </div>
+                    <!-- <div class="form-group">
+                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                        <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                    </div> -->
+                    <div class="form-group">
+
+
+                        <input type="submit" name="submit" id="submit" class="form-submit" value="Book" onclick="submitBookForm()"  />
+
+          
+                        <!-- <input type="submit" name="submit" id="submit" class="form-submit" value="Book" autocomplete="off" onclick="submitBookForm()"/> -->
+
+
+                    </div>
+                </form>
+                <!-- <p class="loginhere">
+                    Have already an account ? <a href="#" class="loginhere-link">Login here</a>
+                </p> -->
+            </div>
+        </div>
+    </section>
+    </div>
+
+  
+<!-- Log In -->
+      <div class="main" id="loginformid" style="position: absolute; top:50%; left: 50%; z-index: 1; display: none; transform : translate(-50%,-50%);  height: 400px;">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                 
+                    <form method="POST" id="bookform" class="signup-form">
+                      <span><ion-icon name="close-outline" style="top:0; right: 10px; width: 30px; height: 30px; position: absolute;" onclick="closeLoginForm()"></ion-icon></span> 
+                        <h2 class="form-title">Log In</h2>
+                        <div class="form-group">
+
+                          <form class="mx-1 mx-md-4">
+
+                            <div class="d-flex flex-row align-items-center mb-4">
+                              <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                              <div class="form-outline flex-fill mb-0">
+                                <input type="text" class="form-input" name="phuti" id="name" placeholder="Your Name" required/>
+                                <!-- <label class="form-label" for="form3Example1c">Your Name</label> -->
+                              </div>
+                            </div>
+          
+                            <div class="d-flex flex-row align-items-center mb-4">
+                              <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                              <div class="form-outline flex-fill mb-0">
+                                <!-- <input type="password" id="form3Example4c" class="form-control" /> -->
+                                <input type="password" class="form-input" password="123" id="password" placeholder="Your Password" required/>
+                                <!-- <label class="form-label" for="form3Example4c">Password</label> -->
+                              </div>
+                            </div>
+        
+                            <script>
+                              // JavaScript code for handling the redirect to the registration form
+                              document.getElementById("signupLink").addEventListener("click", function (event) {
+                                  event.preventDefault(); // Prevent the default link behavior
+                                  window.location.href = "/registration"; // Replace with the correct registration form URL
+                              });
+                          </script>
+                      
+                    <div class="form-group">
+                    
+                        <div class="form-group">
+    
+    
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Log In" onclick="submitLoginForm()" />
+    
+                        </div>
+
+                        <div class="form-check d-flex justify-content-center mb-5">
+                          <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                          <!-- <label class="form-check-label" for="form2Example3"> -->
+                            <!-- I agree all statements in <a href="#!">Terms of service</a> -->
+                            <p>Don't have an account? <a href="/registrationPopup">Sign up here</a>.</p>
+                          </label>
+                        </div>
+
+                    </form>
+ 
+                </div>
+            </div>
+        </section>
+        </div>
+
+     
+
+
+      
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+  <a href="index.html">  <img src="assets/img/logo.jpeg" alt=""  style = "width : 80px ; height : 80px;" > </a> 
+
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+      </a>
+      
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="javascript:OpenHomeForm()">Home</a></li>
+          <li><a href="javascript:OpenBookingForm()">Booking</a></li>
+          <li><a href="javascript:OpenMyBookingsForm()">My Bookings</a></li>
+        
+
+        </ul>
+      </nav><!-- .navbar -->
+
+      <ul>
+        <!-- <button  class="btn-book-a-table" style="border:none; " type="submit" onclick="OpenBookForm()">Book Appointment</button>
+        <button  class="btn-book-a-table" style="border:none; " type="submit" onclick="TrackForm()">Track Appointment</button> -->
+        <button  class="btn-book-a-table" style="border:none; " type="submit" onclick="redirectToHomePage()">Log Out</button>
+      </ul>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+
+
+    
+  </header><!-- End Header -->
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center section-bg"  data-aos="fade-up" data-aos-delay="150" >
+
+    <div class="container">
+      
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+
+    <div class="Customer" >
+        <div class="heading">
+             <h1>My Bookings</h1>
+        </div>
+        <input class="Customer_Search" type="text" placeholder="Search Bookings" value="" onChange={handleSearch} />
+        <table class='Customer_Table'>
+          <thead>
+            <tr>
+              <th>Reference</th>
+              <!-- <th>Customer Name</th> -->
+              <th>Appointment Date</th>
+              <th>Service</th>
+              <th>Address</th>
+              <th>Progress</th>
+              <th>View Information</th>
+              
+            </tr>
+          </thead>
+  
+          <tbody id="tableid" onload="getAppointments()">
+            
+                       
+          </tbody> 
+        
+        </table>
+      </div>
+
+
+  
+  </main><!-- End #main -->
+      </div>
+    </div>
+
+  </footer> -->
+  <!-- End Footer -->
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Booking -->
+   <!-- JS -->
+    <script src="book/vendor/jquery/jquery.min.js"></script>
+   <script src="book/js/main.js"></script> 
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="api/apiconnection.js"></script> 
+   
+
+   <!--<script> src="control.js"</script>-->
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+<!-- scripts for log in -->
+
+<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+  <!-- end of log in scrpits -->
+
+
+</body>
+
+</html>

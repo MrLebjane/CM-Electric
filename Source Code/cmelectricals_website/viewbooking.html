@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CM Electric</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.jpeg" rel="icon">
+  <link href="assets/img/logo.jpeg" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!--Booking-->
+  <!-- Font Icon -->
+  <link rel="stylesheet" href="book/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+  <!-- Main css -->
+    <link rel="stylesheet" href="book/css/style.css">  
+    
+      <!--LogIn-->
+  <!-- Font Icon -->
+  <link rel="stylesheet" href="login/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+  <!-- Main css -->
+    <link rel="stylesheet" href="login/css/style.css">  
+
+  <!-- =======================================================
+  * Template Name: CM-Electric
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/CM-Electric-bootstrap-Booking-Services-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+
+<!-- log in scrpits -->
+<!--===============================================================================================-->	
+<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+  
+<link rel="stylesheet" href="./assets/css/alertify.min.css">
+<script src="./assets/js/alertify.min.js"></script>
+<!--===============================================================================================-->
+
+</head>
+
+<body>
+ <script>
+  function mybooking(){
+    
+    event.preventDefault();
+   const queryParams = new URLSearchParams(window.location.search);
+   const id = queryParams.get('id');
+   
+   axios.get('http://localhost:8080/getuserbooking/'+id, {
+   headers: {
+     'Content-Type': 'application/json',
+     'Access-Control-Allow-Origin': '*'
+   }
+ })
+   .then(response => {
+        var complete=response.data.complete!='0' ? 'Complete' : 'Incomplete'
+        var paid=response.data.paid!='0' ? 'Paid' : 'Not Paid'
+        var technician=response.data.technician!=null ? response.data.technician : 'Not Assigned'
+        sessionStorage.setItem('BookID',response.data.book_ID)
+        document.getElementById("bookingref").innerHTML+=response.data.book_ID;
+        document.getElementById("bookingservice").innerHTML+=response.data.service;
+        document.getElementById("bookingdate").innerHTML+=response.data.appointmentDate;
+        document.getElementById("bookingtech").innerHTML+=technician;
+        document.getElementById("bookingprogress").innerHTML+=complete;
+        document.getElementById("bookingpay").innerHTML+=paid;
+
+        if(response.data.quotation!==null && response.data.quotation!=0){
+          quotation.innerHTML="<button  class='btn-book-a-table' style='border:none;  ' type='submit' onclick='viewquotation("+response.data.book_ID+")'>View Quotation</button>"
+
+        }
+        else{
+          quotation.innerHTML="<button  class='btn-book-a-table' style='border:none;  ' type='submit' onclick='quote()'>View Quotation</button>"
+ 
+        }
+        if(response.data.paid==1){
+          document.getElementById("invoice").innerHTML="<button  class='btn-book-a-table' style='border:none;  ' type='submit' onclick='redirectToInvoicePage("+response.data.book_ID+")'>View Invoice</button>"
+
+        }
+        else{
+          document.getElementById("invoice").innerHTML="<button  class='btn-book-a-table' style='border:none;  ' type='submit' onclick='invoice()'>View Invoice</button>"
+ 
+        }
+        sessionStorage.setItem('servicetype',response.data.service+" Services")
+     
+   })
+   .catch(error => {
+     console.log(error.message);
+   });
+  
+}
+  window.onload = mybooking
+ </script>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+  <a href="index.html">  <img src="assets/img/logo.jpeg" alt=""  style = "width : 80px ; height : 80px;" > </a> 
+
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+      </a>
+      
+      <nav id="navbar" class="navbar">
+        <ul> 
+          <li><a href="javascript:OpenHomeForm()">Home</a></li>
+          <li><a href="javascript:OpenBookingForm()">Booking</a></li>
+          <li><a href="javascript:OpenMyBookingsForm()">My Bookings</a></li>
+
+        </ul>
+      </nav><!-- .navbar -->
+
+      <ul>
+        <!-- <button  class="btn-book-a-table" style="border:none; " type="submit" onclick="OpenBookForm()">Book Appointment</button>
+        <button  class="btn-book-a-table" style="border:none; " type="submit" onclick="TrackForm()">Track Appointment</button> -->
+        <button  class="btn-book-a-table" style="border:none; " type="submit" onclick="redirectToHomePage()">Log Out</button>
+      </ul>
+
+      <script>
+        
+        </script>
+        
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <!-- ======= Hero Section ======= -->
+  <!-- <section id="hero" class="hero d-flex align-items-center section-bg"  data-aos="fade-up" data-aos-delay="150" >
+
+    
+
+    <div class="container" style="min-width:110%; top: 20%;">
+        <img src="./assets/img/solar.jpg" alt="Image Description">
+
+      
+    </div>
+  </section> -->
+  <!-- End Hero Section -->
+
+ 
+
+  <main id="main" style="background: #eee;">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+   <div class="homeheading">
+      <div>
+        <h1>Booking Details</h1>
+      </div>  
+   </div>
+
+   
+    <div class="detailed"> 
+
+        <div class="detailedbooking" style="background: white;" id="mybooking" >
+
+          
+        <h5 id="bookingref">Booking reference :</h5>
+        <br>
+        <h5 id="bookingservice">Service :</h5>
+        <br>
+        <h5 id="bookingdate">Appointment date :</h5>
+        <br>
+        <h5 id="bookingtech">Assigned Technician :</h5>
+        <br>
+        <h5 id="bookingprogress">Progress :</h5>
+        <br>
+        <h5 id="bookingpay">Payment :</h5>
+
+
+
+    
+        </div> 
+     
+    
+        <div class="detailedbooking" style="background: white;">
+    
+            <div class="detailed" id="quotation">
+            </div>
+            <div class="detailed" id="invoice">
+            </div>
+            
+                      <div class="detailed" id="feedback">
+            <button  class="btn-book-a-table" style="border:none; padding:100px,0px,100px,0px; " type="submit" onclick="Openfeedbackform()">Send Feedback</button>
+            </div>
+            
+        </div> 
+    </div>
+
+
+
+    
+    
+
+  
+  </main><!-- End #main -->
+
+  <div class="main" id="feedbackid" style="position: absolute; top:20%; left: 50%; z-index: 1; display: none; transform : translate(-50%,-50%);  max-height: 90px;">
+
+    <section class="signup">
+        <!-- <img src="images/signup-bg.jpg" alt=""> -->
+        <div class="container">
+            <div class="signup-content">
+             
+                <form method="POST" id="feedbackid" class="signup-form" style="padding: 0;">
+                  <span><ion-icon name="close-outline" style="top:0; right: 10px; width: 30px; height: 30px; position: absolute;" onclick="closefeedbackForm()"></ion-icon></span> 
+                    <h2 class="form-title">Feedback</h2>
+                    <div class="form-group">
+
+                    
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <textarea type="text" class="form-input" id="feedbackareaid" placeholder="Your Feedback" rows = "7" required ></textarea>
+                            <!-- <label class="form-label" for="form3Example1c">Your Name</label> -->
+                          </div>
+                        </div>
+      
+    
+                      <input type="submit" name="submit" id="submit" class="form-submit" value="SUBMIT" onclick="Addfeedback()" />
+                <div class="form-group">
+
+                    <div class="form-group">
+
+
+                    </div>
+
+             
+
+                </form>
+
+                <script src="main.js"></script>
+                <!-- Registration Pop-up Form -->
+
+                <!-- <p class="loginhere">
+                    Have already an account ? <a href="#" class="loginhere-link">Login here</a>
+                </p> -->
+            </div>
+        </div>
+    </section>
+
+
+    </div>
+
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Booking -->
+   <!-- JS -->
+    <script src="book/vendor/jquery/jquery.min.js"></script>
+   <script src="book/js/main.js"></script> 
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="api/apiconnection.js"></script> 
+   
+
+   <!--<script> src="control.js"</script>-->
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+<!-- scripts for log in -->
+
+<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+  
+
+</body>
+
+</html>
