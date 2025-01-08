@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="116cm" height="60cm" viewBox="-192 -132 2309 1191" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="762.552" y="37.7784" width="187.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="762.552" y="37.7784" width="187.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="856.102" y="57.7784">User</text>
+    <rect style="fill: #ffffff" x="762.552" y="65.7784" width="187.1" height="116"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="762.552" y="65.7784" width="187.1" height="116"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="765.552" y="78.9784">#User_Name: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="765.552" y="94.9784">#User_Surname: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="765.552" y="110.978">#User_Email: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="765.552" y="126.978">#User_Phone: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="765.552" y="142.978">#User_Type: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="765.552" y="158.978">#User_Address: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="765.552" y="174.978">#User_Password: String</text>
+    <rect style="fill: #ffffff" x="762.552" y="181.778" width="187.1" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="762.552" y="181.778" width="187.1" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="765.552" y="194.978">+VerifyLogin(): boolean</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="605.59" y="513.752" width="502.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="605.59" y="513.752" width="502.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="856.99" y="533.752">Manager</text>
+    <rect style="fill: #ffffff" x="605.59" y="541.752" width="502.8" height="100"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="605.59" y="541.752" width="502.8" height="100"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="608.59" y="554.952">-technician: Technician</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="608.59" y="570.952">-client: Client</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="608.59" y="586.952">-stock: Stock</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="608.59" y="602.952">-quotation: Quotation</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="608.59" y="618.952">-progress: Progress</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="608.59" y="634.952">-invoice: Invoice</text>
+    <rect style="fill: #ffffff" x="605.59" y="641.752" width="502.8" height="100"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="605.59" y="641.752" width="502.8" height="100"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="608.59" y="654.952">+login(Man_Email:String,Man_Password:String): boolean</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="608.59" y="670.952">+AssignAppointment(technician:Technician,client:Client): boolean</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="608.59" y="686.952">+AddTechnician(technician:Technician)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="608.59" y="702.952">+RemoveTechnician(technician:Technician): boolean</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="608.59" y="718.952">+GenerateBusinessData(client[0..*]:Client,stock:Stock,</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="608.59" y="734.952">                      invoice:Invoice): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1282.73" y="529.722" width="333.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1282.73" y="529.722" width="333.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1449.43" y="549.722">Technician</text>
+    <rect style="fill: #ffffff" x="1282.73" y="557.722" width="333.4" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1282.73" y="557.722" width="333.4" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1285.73" y="570.922">+service: Service</text>
+    <rect style="fill: #ffffff" x="1282.73" y="577.722" width="333.4" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1282.73" y="577.722" width="333.4" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1285.73" y="590.922">+login(email:string,password:String): bool</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="856.102,220.014 856.102,364.44 1449.43,364.44 1449.43,528.728 "/>
+    <polygon style="fill: #ffffff" points="864.102,220.014 856.102,204.014 848.102,220.014 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="864.102,220.014 856.102,204.014 848.102,220.014 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="856.102,220.014 856.102,365.765 856.99,365.765 856.99,513.752 "/>
+    <polygon style="fill: #ffffff" points="864.102,220.014 856.102,204.014 848.102,220.014 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="864.102,220.014 856.102,204.014 848.102,220.014 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="856.102,220.014 856.102,366.037 84.3664,366.037 84.3664,514.296 "/>
+    <polygon style="fill: #ffffff" points="864.102,220.014 856.102,204.014 848.102,220.014 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="864.102,220.014 856.102,204.014 848.102,220.014 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-155.484" y="514.296" width="479.7" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-155.484" y="514.296" width="479.7" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="84.3664" y="534.296">Client</text>
+    <rect style="fill: #ffffff" x="-155.484" y="542.296" width="479.7" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-155.484" y="542.296" width="479.7" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-152.484" y="555.496">-service: Service</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-152.484" y="571.496">-progress[0..*]: Progress</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-152.484" y="587.496">-Paid: boolean</text>
+    <rect style="fill: #ffffff" x="-155.484" y="594.296" width="479.7" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-155.484" y="594.296" width="479.7" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-152.484" y="607.496">+Book(User_Name:String,User_Surname:String,User_Email:String,</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-152.484" y="623.496">      User_Phone:String,User_Address,service:Service): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-152.484" y="639.496">+DisplayProgress(): String</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="667.868" y="-130.757" width="364.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="667.868" y="-130.757" width="364.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="849.968" y="-110.757">Progress</text>
+    <rect style="fill: #ffffff" x="667.868" y="-102.757" width="364.2" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="667.868" y="-102.757" width="364.2" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="670.868" y="-89.5574">-date: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="670.868" y="-73.5574">-message: String</text>
+    <rect style="fill: #ffffff" x="667.868" y="-66.7574" width="364.2" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="667.868" y="-66.7574" width="364.2" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="670.868" y="-53.5574">+ClientProgress(): String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="670.868" y="-37.5574">+LogProgress(date:String,message:String): void</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-180.655,552.296 -190.484,552.296 -190.484,-76.7574 667.868,-76.7574 "/>
+    <polygon style="fill: #000000" points="-155.484,552.296 -169.484,557.096 -183.484,552.296 -169.484,547.496 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-155.484,552.296 -169.484,557.096 -183.484,552.296 -169.484,547.496 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-188.484" y="233.769"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="-187.484" y="548.296"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="663.868" y="-80.7574"></text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="973.804" y="828.664" width="341.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="973.804" y="828.664" width="341.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1144.35" y="848.664">Service</text>
+    <rect style="fill: #ffffff" x="973.804" y="856.664" width="341.1" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="973.804" y="856.664" width="341.1" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="976.804" y="869.864">-ServiceType: String</text>
+    <rect style="fill: #ffffff" x="973.804" y="876.664" width="341.1" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="973.804" y="876.664" width="341.1" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="976.804" y="889.864">+AddNewService(ServiceType:String): boolean</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="976.804" y="905.864">+RemoveService(ServiceType:String): boolean</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="349.388,604.296 577.74,604.296 577.74,866.664 973.804,866.664 "/>
+    <polygon style="fill: #ffffff" points="324.216,604.296 338.216,599.496 352.216,604.296 338.216,609.096 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="324.216,604.296 338.216,599.496 352.216,604.296 338.216,609.096 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="579.74" y="731.48"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="356.216" y="600.296"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="969.804" y="862.664"></text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1449.43,622.894 1449.43,866.664 1314.9,866.664 "/>
+    <polygon style="fill: #ffffff" points="1449.43,597.722 1454.23,611.722 1449.43,625.722 1444.63,611.722 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1449.43,597.722 1454.23,611.722 1449.43,625.722 1444.63,611.722 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="1382.17" y="862.664"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1460.43" y="609.722"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1318.9" y="862.664"></text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="580.418,567.752 457.903,567.752 457.903,568.296 324.216,568.296 "/>
+    <polygon style="fill: #ffffff" points="605.59,567.752 591.59,572.552 577.59,567.752 591.59,562.952 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="605.59,567.752 591.59,572.552 577.59,567.752 591.59,562.952 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="459.903" y="564.024"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="573.59" y="563.752"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="328.216" y="564.296"></text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1133.56,567.752 1202.56,567.752 1202.56,567.722 1282.73,567.722 "/>
+    <polygon style="fill: #ffffff" points="1108.39,567.752 1122.39,562.952 1136.39,567.752 1122.39,572.552 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1108.39,567.752 1122.39,562.952 1136.39,567.752 1122.39,572.552 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1204.56" y="563.737"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1140.39" y="563.752"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="1278.73" y="563.722"></text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-96.882" y="906.946" width="364.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-96.882" y="906.946" width="364.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="85.218" y="926.946">Stock</text>
+    <rect style="fill: #ffffff" x="-96.882" y="934.946" width="364.2" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-96.882" y="934.946" width="364.2" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-93.882" y="948.146">-Item_Name: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-93.882" y="964.146">-Item_Price: Double</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-93.882" y="980.146">-client: Client</text>
+    <rect style="fill: #ffffff" x="-96.882" y="986.946" width="364.2" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-96.882" y="986.946" width="364.2" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-93.882" y="1000.15">+AddStock(ItemName:String,ItemPrice:Double,</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-93.882" y="1016.15">          client:Client): boolean</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-93.882" y="1032.15">+UpdateStock(ItemName:String,ItemPrice:Double,</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-93.882" y="1048.15">             client:Client): boolean</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="85.218,881.774 85.218,769.621 84.3664,769.621 84.3664,646.296 "/>
+    <polygon style="fill: #ffffff" points="85.218,906.946 80.418,892.946 85.218,878.946 90.018,892.946 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="85.218,906.946 80.418,892.946 85.218,878.946 90.018,892.946 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="84.7922" y="765.621"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="96.218" y="902.946"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="88.3664" y="658.296"></text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1307.8" y="989.91" width="510.5" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1307.8" y="989.91" width="510.5" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1563.05" y="1009.91">Quotation</text>
+    <rect style="fill: #ffffff" x="1307.8" y="1017.91" width="510.5" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1307.8" y="1017.91" width="510.5" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1310.8" y="1031.11">-inspection: Inspection</text>
+    <rect style="fill: #ffffff" x="1307.8" y="1037.91" width="510.5" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1307.8" y="1037.91" width="510.5" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1310.8" y="1051.11">+CreateQuotation(client:Client,stock:Stock,inspection:Inspection)</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="580.418,699.752 429.454,699.752 429.454,920.946 267.318,920.946 "/>
+    <polygon style="fill: #000000" points="605.59,699.752 591.59,704.552 577.59,699.752 591.59,694.952 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="605.59,699.752 591.59,704.552 577.59,699.752 591.59,694.952 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="431.454" y="806.349"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="573.59" y="695.752"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="271.318" y="916.946"></text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1133.56,667.752 1563.05,667.752 1563.05,989.91 "/>
+    <polygon style="fill: #000000" points="1108.39,667.752 1122.39,662.952 1136.39,667.752 1122.39,672.552 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1108.39,667.752 1122.39,662.952 1136.39,667.752 1122.39,672.552 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="1335.72" y="663.752"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1140.39" y="663.752"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1567.05" y="985.91"></text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1766.76" y="529.856" width="348.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1766.76" y="529.856" width="348.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1941.16" y="549.856">Inspection</text>
+    <rect style="fill: #ffffff" x="1766.76" y="557.856" width="348.8" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1766.76" y="557.856" width="348.8" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1769.76" y="571.056">-CalloutFee: double</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1769.76" y="587.056">-Areasize: double</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1769.76" y="603.056">-productitems[0..*]: String</text>
+    <rect style="fill: #ffffff" x="1766.76" y="609.856" width="348.8" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1766.76" y="609.856" width="348.8" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1769.76" y="623.056">+RecordInspection(productitems[0..*]:String,</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1769.76" y="639.056">                  Areasize:double): boolean</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1641.31,567.722 1698.45,567.722 1698.45,583.856 1766.76,583.856 "/>
+    <polygon style="fill: #000000" points="1616.13,567.722 1630.13,562.922 1644.13,567.722 1630.13,572.522 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1616.13,567.722 1630.13,562.922 1644.13,567.722 1630.13,572.522 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1700.45" y="571.789"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1648.13" y="563.722"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="1762.76" y="579.856"></text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1843.47,1003.91 1941.16,1003.91 1941.16,645.856 "/>
+    <polygon style="fill: #ffffff" points="1818.3,1003.91 1832.3,999.11 1846.3,1003.91 1832.3,1008.71 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1818.3,1003.91 1832.3,999.11 1846.3,1003.91 1832.3,1008.71 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="1879.73" y="999.91"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1850.3" y="999.91"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1945.16" y="657.856"></text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1133.56,699.752 1144.35,699.752 1144.35,828.664 "/>
+    <polygon style="fill: #000000" points="1108.39,699.752 1122.39,694.952 1136.39,699.752 1122.39,704.552 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1108.39,699.752 1122.39,694.952 1136.39,699.752 1122.39,704.552 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="1126.37" y="695.752"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1140.39" y="695.752"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1148.35" y="824.664"></text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1641.31,543.722 1651.13,543.722 1651.13,-92.7574 1032.07,-92.7574 "/>
+    <polygon style="fill: #000000" points="1616.13,543.722 1630.13,538.922 1644.13,543.722 1630.13,548.522 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1616.13,543.722 1630.13,538.922 1644.13,543.722 1630.13,548.522 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1653.13" y="221.482"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1648.13" y="539.722"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1036.07" y="-96.7574"></text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1133.56,527.752 1143.39,527.752 1143.39,-56.7574 1032.07,-56.7574 "/>
+    <polygon style="fill: #ffffff" points="1108.39,527.752 1122.39,522.952 1136.39,527.752 1122.39,532.552 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1108.39,527.752 1122.39,522.952 1136.39,527.752 1122.39,532.552 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1145.39" y="231.497"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1140.39" y="523.752"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1036.07" y="-60.7574"></text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="766.562" y="985.946" width="279.5" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="766.562" y="985.946" width="279.5" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="906.312" y="1005.95">Invoice</text>
+    <rect style="fill: #ffffff" x="766.562" y="1013.95" width="279.5" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="766.562" y="1013.95" width="279.5" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="769.562" y="1027.15">+quotation: Quotation</text>
+    <rect style="fill: #ffffff" x="766.562" y="1033.95" width="279.5" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="766.562" y="1033.95" width="279.5" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="769.562" y="1047.15">+CreateInvoice(quotation:Quotation)</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="856.99,766.924 856.99,870.849 906.312,870.849 906.312,985.946 "/>
+    <polygon style="fill: #000000" points="856.99,741.752 861.79,755.752 856.99,769.752 852.19,755.752 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="856.99,741.752 861.79,755.752 856.99,769.752 852.19,755.752 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="881.651" y="866.849"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="867.99" y="753.752"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="910.312" y="981.946"></text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1071.23,1023.95 1183.43,1023.95 1183.43,1023.91 1306.79,1023.91 "/>
+    <polygon style="fill: #ffffff" points="1046.06,1023.95 1060.06,1019.15 1074.06,1023.95 1060.06,1028.75 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1046.06,1023.95 1060.06,1019.15 1074.06,1023.95 1060.06,1028.75 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1185.43" y="1019.93"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1078.06" y="1019.95"></text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="1302.79" y="1019.91"></text>
+  </g>
+</svg>
